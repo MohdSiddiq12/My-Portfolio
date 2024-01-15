@@ -1,4 +1,4 @@
-﻿# Portfolio Website. 
+﻿# Portfolio Website
 
 This is a portfolio website that I have designed and developed to showcase my skills and projects. 
 
