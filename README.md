@@ -1,6 +1,7 @@
-﻿# Portfolio Website.
+# Portfolio Website
+This Portfolio is live at [http://sidd.lovestoblog.com/](http://sidd.lovestoblog.com/)
 
-This is a portfolio website that I have designed and developed to showcase my skills and projects. 
+This is a portfolio website that I have designed and developed to showcase my skills and projects.
 
 ## Overview
 
@@ -29,6 +30,4 @@ Some of the key features of this portfolio site include:
 - Social media icons linking to my profiles
 - This website is hosted using Infinityfree service
 
-
 Please feel free to explore the live site and contact me with any questions!
-
