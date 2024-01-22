@@ -30,4 +30,4 @@ Some of the key features of this portfolio site include:
 - Social media icons linking to my profiles
 - This website is hosted using Infinityfree service
 
-Please feel free to explore the live site and contact me with any questions!
+Please feel free to explore the live site and contact me with any questions!..
