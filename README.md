@@ -1,25 +1,31 @@
-Portfolio Website.
-This is a portfolio website that I have designed and developed to showcase my skills and projects.
+# Portfolio Website
 
-Overview
-The goal of this project was to create an online presence where I can display my work to potential employers or clients. The site includes the following key sections:
+Welcome to my portfolio website, meticulously designed and developed to showcase my skills and projects.
 
-About - A brief background on myself and my experience
-Skills - An overview of my technical skills and proficiencies
-Projects - Descriptions and images of projects I have completed, with links to code repositories.
-Contact - A contact form for visitors to get in touch
-Tools & Technology
-This portfolio site was built using the following tools and technologies:
+## Overview
+This project aimed to establish an online presence for effectively presenting my work to potential employers or clients. The website encompasses key sections that provide a comprehensive view of my professional profile:
 
-HTML
-CSS
-JavaScript
-GitHub for version control and hosting
-Key Features
-Some of the key features of this portfolio site include:
+- **About:** A concise background detailing my professional journey and experience.
+- **Skills:** An overview highlighting my technical skills and proficiencies.
+- **Projects:** Comprehensive descriptions and visual representations of completed projects, accompanied by links to code repositories.
+- **Contact:** A user-friendly contact form for visitors to easily get in touch.
 
-Responsive design that adapts to mobile, tablet, and desktop screens
-An intuitive, user-friendly interface and navigation
-Social media icons linking to my profiles
-This website is hosted using Infinityfree service
-Please feel free to explore the live site and contact me with any questions!
+## Tools & Technology
+To bring this portfolio to life, I utilized the following tools and technologies:
+
+- HTML
+- CSS
+- JavaScript
+- GitHub for version control and hosting
+
+## Key Features
+Experience the following key features when exploring this portfolio site:
+
+- **Responsive Design:** Seamlessly adapts to various screen sizes, ensuring an optimal viewing experience on mobile, tablet, and desktop devices.
+- **Intuitive Interface:** User-friendly navigation for effortless exploration of content.
+- **Social Media Integration:** Direct links to my social media profiles for additional engagement.
+
+## Hosting Information
+This website is proudly hosted using the Infinityfree service.
+
+Feel free to explore the live site and reach out with any questions or inquiries! Thank you for visiting.
