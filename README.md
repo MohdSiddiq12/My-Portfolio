@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Welcome to my portfolio website, meticulously designed and developed to showcase my skills and projects.
+Welcome to my portfolio website,designed and developed to showcase my skills and projects.
 
 ## Overview
 This project aimed to establish an online presence for effectively presenting my work to potential employers or clients. The website encompasses key sections that provide a comprehensive view of my professional profile:
@@ -8,7 +8,7 @@ This project aimed to establish an online presence for effectively presenting my
 - **About:** A concise background detailing my professional journey and experience.
 - **Skills:** An overview highlighting my technical skills and proficiencies.
 - **Projects:** Comprehensive descriptions and visual representations of completed projects, accompanied by links to code repositories.
-- **Contact:** A user-friendly contact form for visitors to easily get in touch.
+- **Contact:** links to my socials.
 
 ## Tools & Technology
 To bring this portfolio to life, I utilized the following tools and technologies:
