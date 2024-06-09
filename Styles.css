@@ -12,18 +12,6 @@
   --light-slate: #a8b2d1;
   --lightest-slate: #ccd6f6;
   --font-sans: 'Poppins', 'Raleway', sans-serif;
-  --background-color: var(--navy);
-  --text-color: var(--main-white);
-}
-
-[data-theme="dark"] {
-  --background-color: var(--navy);
-  --text-color: var(--main-white);
-}
-
-[data-theme="light"] {
-  --background-color: #f0f0f0;
-  --text-color: #1d3557;
 }
 
 /* Base reset */
@@ -41,9 +29,8 @@ html {
 body {
   font-family: var(--font-sans);
   font-size: 1.8rem;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--navy);
+  color: var(--main-white);
 }
 
 /* Typography */
@@ -56,8 +43,6 @@ h1, h2 {
 h1 {
   font-size: 6rem;
   margin-bottom: 1rem;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
 }
 
 h2 {
@@ -68,18 +53,12 @@ h2 {
 p {
   font-size: 1.8rem;
   line-height: 1.6;
-  color: var(--text-color);
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  color: var(--slate);
 }
 
 /* Links */
 a {
-  color: var(--text-color);
+  color: var(--main-white);
   text-decoration: none;
 }
 
@@ -124,20 +103,6 @@ a:hover {
   border-radius: 4px;
 }
 
-.theme-toggle {
-  font-size: 2rem;
-  margin-left: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text-color);
-  transition: color 0.3s ease;
-}
-
-.theme-toggle:hover {
-  color: var(--main-red);
-}
-
 /* Welcome Section */
 .welcome-section {
   display: flex;
@@ -157,8 +122,6 @@ a:hover {
   font-size: 2.4rem;
   font-style: italic;
   color: var(--main-red);
-  opacity: 0;
-  animation: fadeIn 4s forwards;
 }
 
 /* Projects Section */
@@ -170,7 +133,7 @@ a:hover {
 .projects-section-header {
   max-width: 640px;
   margin: 0 auto 6rem auto;
-  border-bottom: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--main-white);
 }
 
 .projects-grid {
@@ -205,7 +168,7 @@ a:hover {
   padding: 2rem 1rem;
   font-size: 2rem;
   background: var(--light-navy);
-  color: var(--text-color);
+  color: var(--main-white);
   text-align: center;
 }
 
@@ -215,7 +178,7 @@ a:hover {
   border-radius: 4px;
   font-size: 2rem;
   background: var(--main-red);
-  color: var(--text-color);
+  color: var(--main-white);
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -257,7 +220,7 @@ a:hover {
   font-size: 2.4rem;
   padding: 1rem 2rem;
   background: var(--main-red);
-  color: var(--text-color);
+  color: var(--main-white);
   border-radius: 4px;
   transition: transform 0.3s ease, background 0.3s ease;
 }
@@ -275,7 +238,7 @@ footer {
   padding: 2rem;
   background: var(--main-gray);
   border-top: 4px solid var(--main-red);
-  color: var(--text-color);
+  color: var(--main-white);
 }
 
 footer p {
