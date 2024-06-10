@@ -1,17 +1,18 @@
 /* Custom properties/variables */
 :root {
-  --main-white: #f0f0f0;
-  --main-red: #e63946;
-  --main-blue: #1d3557;
-  --main-gray: #6d6875;
-  --navy: #0a192f;
-  --light-navy: #112240;
-  --lightest-navy: #233554;
-  --navy-shadow: rgba(2, 12, 27, 0.7);
-  --slate: #8892b0;
-  --light-slate: #a8b2d1;
-  --lightest-slate: #ccd6f6;
+  --main-white: #fefefe;
+  --main-red: #ff4c4c;
+  --main-blue: #3498db;
+  --main-gray: #7f8c8d;
+  --navy: #1a1a2e;
+  --light-navy: #16213e;
+  --lightest-navy: #0f3460;
+  --navy-shadow: rgba(0, 0, 0, 0.7);
+  --slate: #a8b2d1;
+  --light-slate: #ccd6f6;
+  --lightest-slate: #e6f1ff;
   --font-sans: 'Poppins', 'Raleway', sans-serif;
+  --font-mono: 'Fira Code', monospace;
 }
 
 /* Base reset */
@@ -69,7 +70,7 @@ a:hover {
 /* Navigation */
 .nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
@@ -79,6 +80,20 @@ a:hover {
   box-shadow: 0 2px 4px var(--navy-shadow);
   z-index: 10;
   padding: 1rem 2rem;
+}
+
+.nav .btn-download {
+  background-color: var(--main-red);
+  color: var(--main-white);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav .btn-download:hover {
+  background: var(--main-blue);
+  transform: translateY(-2px);
 }
 
 .nav-list {
@@ -114,6 +129,23 @@ a:hover {
   text-align: center;
 }
 
+.animated-name span {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.animated-name span:nth-child(1) { animation-delay: 0s; }
+.animated-name span:nth-child(2) { animation-delay: 0.1s; }
+.animated-name span:nth-child(3) { animation-delay: 0.2s; }
+.animated-name span:nth-child(4) { animation-delay: 0.3s; }
+
 .welcome-section h1 {
   margin-bottom: 1rem;
 }
@@ -146,7 +178,7 @@ a:hover {
 }
 
 .project {
-  background: var(--light-navy);
+  background: var(--lightest-navy);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   overflow: hidden;
