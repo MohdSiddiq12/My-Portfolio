@@ -17,7 +17,8 @@ To bring this portfolio to life, I utilized the following tools and technologies
 - HTML
 - CSS
 - JavaScript
-- GitHub for version control and hosting
+- GitHub for version control
+- Infinity free for hosting this website
 
 ## Key Features
 Experience the following key features when exploring this portfolio site:
