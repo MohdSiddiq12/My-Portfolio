@@ -3,7 +3,7 @@ name: Deploy to Infinity Free
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -18,7 +18,13 @@ jobs:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_DIRECTORY: /htdocs
         run: |
           sudo apt-get update
           sudo apt-get install -y lftp
-          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -R ./htdocs /htdocs"
+          lftp -c "
+            set ftp:list-options -a;
+            open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
+            cd $FTP_DIRECTORY;
+            mirror -R ./ ./
+          "
