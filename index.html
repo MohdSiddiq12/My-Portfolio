@@ -1,86 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&family=Raleway:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Siddiq - Portfolio</title>
+    <meta name="description" content="Portfolio of Mohammed Siddiq, an aspiring AI-ML/Data Scientist Developer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        .navbar {
+            background-color: var(--secondary-color);
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .btn-custom {
+            background-color: var(--accent-color);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        #welcome-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        #contact {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav id="navbar" class="nav">
-    <a href="Resume.pdf" download class="btn btn-download">Download Resume</a>
-    <ul class="nav-list">
-      <li><a href="#welcome-section">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mohammed Siddiq</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#welcome-section">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-custom" href="Resume.pdf" download>Download Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Welcome Section -->
-  <section id="welcome-section" class="welcome-section">
-    <h1 class="animated-name">Hey, I am <span id="name">Sidd</span></h1>
-    <p>I am an aspiring AI-ML/Data Scientist Developer</p>
-  </section>
+    <section id="welcome-section" class="py-5 text-center d-flex align-items-center min-vh-100">
+        <div class="container">
+            <h1 class="display-2 mb-4" data-aos="fade-up">Hey, I'm <span class="fw-bold">Sidd</span></h1>
+            <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">An aspiring AI-ML/Data Scientist Developer</p>
+            <a href="#projects" class="btn btn-lg btn-custom" data-aos="fade-up" data-aos-delay="200">View My Work</a>
+        </div>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects-section">
-    <h2 class="projects-section-header">These are some of my projects</h2>
-    <div class="projects-grid">
-      <a href="https://github.com/MohdSiddiq12/Natural-Language-Question-Answering-System" target="_blank" class="project project-tile">
-        <img class="project-image" src="Question_Answering.png" alt="Natural Language Question Answering System">
-        <p class="project-title"><span class="code">&lt;</span> Natural Language Question Answering System <span class="code">&#47;&gt;</span></p>
-      </a>
-      <a href="https://github.com/MohdSiddiq12/House-Price-Prediction-using-Machine-Learning-Algorithm---The-case-of-Hyderabad-India" target="_blank" class="project project-tile">
-        <img class="project-image" src="House_Price_Prediction.png" alt="House Price Predictions using ML">
-        <p class="project-title"><span class="code">&lt;</span> House Price Predictions using ML <span class="code">&#47;&gt;</span></p>
-      </a>
-      <a href="https://github.com/MohdSiddiq12/NightChill" target="_blank" class="project project-tile">
-        <img class="project-image" src="VS_Code.jpeg" alt="VS Code Theme Extension">
-        <p class="project-title"><span class="code">&lt;</span> VS Code Theme Extension <span class="code">&#47;&gt;</span></p>
-      </a>
-      <a href="https://github.com/MohdSiddiq12/sms_txt_classifier_NeuralNetworks" target="_blank" class="project project-tile">
-        <img class="project-image" src="spam_CLassifier.png" alt="Spam Classifier">
-        <p class="project-title"><span class="code">&lt;</span> Spam Classifier <span class="code">&#47;&gt;</span></p>
-      </a>
-      <a href="https://github.com/MohdSiddiq12/KMeans" target="_blank" class="project project-tile">
-        <img class="project-image" src="k_means_Classifier.jpg" alt="Grouping People with K-Means">
-        <p class="project-title"><span class="code">&lt;</span> Grouping People with K-Means <span class="code">&#47;&gt;</span></p>
-      </a>
-      <a href="https://github.com/MohdSiddiq12/Retention-Rates-of-Bank-Customers" target="_blank" class="project project-tile">
-        <img class="project-image" src="churn_prediction.png" alt="Retention Rates of Bank Customers">
-        <p class="project-title"><span class="code">&lt;</span> Retention Rates of Bank Customers <span class="code">&#47;&gt;</span></p>
-      </a>
-    </div>
-    <a href="https://github.com/MohdSiddiq12?tab=repositories" class="btn btn-show-all" target="_blank">Show all <i class="fas fa-chevron-right"></i></a>
-  </section>
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">My Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card project-card h-100">
+                        <img src="Question_Answering.png" class="card-img-top" alt="Natural Language Question Answering System">
+                        <div class="card-body">
+                            <h5 class="card-title">Natural Language Question Answering System</h5>
+                            <a href="https://github.com/MohdSiddiq12/Major-Project" class="btn btn-primary" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card project-card h-100">
+                        <img src="House_Price_Prediction.png" class="card-img-top" alt="House Price Predictions using ML">
+                        <div class="card-body">
+                            <h5 class="card-title">House Price Predictions using ML</h5>
+                            <a href="https://github.com/MohdSiddiq12/House-Price-Prediction-using-Machine-Learning-Algorithm---The-case-of-Hyderabad-India" class="btn btn-primary" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card project-card h-100">
+                        <img src="VS_Code.jpeg" class="card-img-top" alt="VS Code Theme Extension">
+                        <div class="card-body">
+                            <h5 class="card-title">VS Code Theme Extension</h5>
+                            <a href="https://github.com/MohdSiddiq12/NightChill" class="btn btn-primary" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card project-card h-100">
+                        <img src="spam_CLassifier.png" class="card-img-top" alt="Spam Classifier">
+                        <div class="card-body">
+                            <h5 class="card-title">Spam Classifier</h5>
+                            <a href="https://github.com/MohdSiddiq12/sms_txt_classifier_NeuralNetworks" class="btn btn-primary" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card project-card h-100">
+                        <img src="k_means_Classifier.jpg" class="card-img-top" alt="Grouping People with K-Means">
+                        <div class="card-body">
+                            <h5 class="card-title">Grouping People with K-Means</h5>
+                            <a href="https://github.com/MohdSiddiq12/KMeans" class="btn btn-primary" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card project-card h-100">
+                        <img src="churn_prediction.png" class="card-img-top" alt="Retention Rates of Bank Customers">
+                        <div class="card-body">
+                            <h5 class="card-title">Retention Rates of Bank Customers</h5>
+                            <a href="https://github.com/MohdSiddiq12/Retention-Rates-of-Bank-Customers" class="btn btn-primary" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="https://github.com/MohdSiddiq12?tab=repositories" class="btn btn-lg btn-custom" target="_blank" data-aos="fade-up">
+                    Show All Projects <i class="fas fa-chevron-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <div class="contact-section-header">
-      <h2>Let's Connect...</h2>
-    </div>
-    <div class="contact-links">
-      <a href="https://www.linkedin.com/in/mohd-siddiq-3516471b0/" target="_blank" class="btn contact-details"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a id="profile-link" href="https://github.com/MohdSiddiq12" target="_blank" class="btn contact-details"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://twitter.com/@MohdSiddiq_12" target="_blank" class="btn contact-details"><i class="fab fa-twitter"></i> Twitter</a>
-      <a href="https://www.instagram.com/iam_sidddd/?hl=en" class="btn contact-details"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="mailto:MohammedSiddiq1235@gmail.com" class="btn contact-details"><i class="fas fa-at"></i> Send a mail</a>
-    </div>
-  </section>
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Let's Connect</h2>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://www.linkedin.com/in/mohd-siddiq-3516471b0/" class="btn btn-outline-light btn-block" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://github.com/MohdSiddiq12" class="btn btn-outline-light btn-block" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://twitter.com/@MohdSiddiq_12" class="btn btn-outline-light btn-block" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                </div>
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://www.instagram.com/iam_sidddd/?hl=en" class="btn btn-outline-light btn-block" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="500">
+                    <a href="mailto:MohammedSiddiq1235@gmail.com" class="btn btn-outline-light btn-block"><i class="fas fa-at"></i> Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; Designed and Developed by Mohammed Siddiq</p>
-  </footer>
+    <footer class="bg-dark text-light text-center py-3">
+        <p class="mb-0">&copy; 2023 Mohammed Siddiq. All rights reserved.</p>
+    </footer>
 
-  <!-- JavaScript -->
-  <script src="action.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
