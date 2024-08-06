@@ -308,3 +308,96 @@ footer p {
     padding: 5rem 2rem;
   }
 }
+/* Open Source Projects Styles */
+.open-source-header {
+  background: linear-gradient(135deg, var(--light-navy) 0%, var(--navy) 100%);
+  padding: 100px 0 50px;
+  text-align: center;
+}
+
+.open-source-header h1 {
+  color: var(--main-white);
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.open-source-header p {
+  color: var(--light-slate);
+  font-size: 1.8rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.open-source-projects {
+  padding: 50px 0;
+  background-color: var(--bg-color);
+}
+
+.project-card {
+  display: flex;
+  background-color: var(--main-white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.project-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+}
+
+.project-card h2 {
+  color: #333; /* Changed from var(--secondary-color) to a darker color */
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  color: #666; /* Changed from var(--text-color) to a darker color */
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links .btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.4rem;
+}
+
+.btn-primary {
+  background-color: var(--main-blue);
+  border: none;
+}
+
+.btn-secondary {
+  background-color: var(--main-gray);
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+      flex-direction: column;
+  }
+
+  .project-image {
+      min-height: 200px;
+  }
+}
