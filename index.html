@@ -62,86 +62,85 @@
             background-color: var(--secondary-color);
             color: #fff;
         }
-        
     
-    #projects {
-        background-color: #f8f9fa;
-    }
-    
-    .project-card {
-        background-color: #ffffff;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .project-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-    }
-    
-    .project-image {
-        height: 250px;
-        overflow: hidden;
-    }
-    
-    .project-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-    
-    .project-card:hover .project-image img {
-        transform: scale(1.1);
-    }
-    
-    .project-info {
-        padding: 25px;
-    }
-    
-    .project-info h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        color: var(--secondary-color);
-    }
-    
-    .project-info p {
-        color: #6c757d;
-        margin-bottom: 20px;
-    }
-    
-    .btn-primary {
-        background-color: var(--primary-color);
-        border: none;
-        padding: 10px 20px;
-        border-radius: 50px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    
-    .btn-primary:hover {
-        background-color: var(--secondary-color);
-        transform: translateY(-3px);
-    }
-    
-    .swiper-container {
-        padding: 30px 0;
-    }
-    
-    .swiper-pagination-bullet {
-        background-color: var(--primary-color);
-    }
-    
-    .swiper-button-next, .swiper-button-prev {
-        color: var(--primary-color);
-    }
-    
-    @media (max-width: 768px) {
-        .project-image {
-            height: 200px;
+        #projects {
+            background-color: #f8f9fa;
         }
-    }
+    
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+    
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+        }
+    
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+    
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+    
+        .project-info {
+            padding: 25px;
+        }
+    
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+    
+        .project-info p {
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+    
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+    
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+    
+        .swiper-container {
+            padding: 30px 0;
+        }
+    
+        .swiper-pagination-bullet {
+            background-color: var(--primary-color);
+        }
+    
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--primary-color);
+        }
+    
+        @media (max-width: 768px) {
+            .project-image {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -158,6 +157,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="open_source.html">Open-source</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -235,9 +237,13 @@
                     Show All Projects <i class="fas fa-chevron-right ms-2"></i>
                 </a>
             </div>
+            <div class="text-center mt-3">
+                <a href="open_source.html" class="btn btn-lg btn-custom" data-aos="fade-up">
+                    Show Open-Source Projects <i class="fas fa-chevron-right ms-2"></i>
+                </a>
+            </div>
         </div>
     </section>
-    
     
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
