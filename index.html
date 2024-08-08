@@ -12,9 +12,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <a class="nav-link" href="open_source.html">Open_Source</a>
-    <link rel="stylesheet" href="open_source.css">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
     <style>
         :root {
             --primary-color: #3498db;
@@ -43,6 +43,10 @@
             background-color: var(--primary-color);
             transform: translateY(-2px);
         }
+        .project-card .card-img-top {
+            height: 100%;
+            object-fit: cover;
+        }
         #welcome-section {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: #fff;
@@ -58,6 +62,86 @@
             background-color: var(--secondary-color);
             color: #fff;
         }
+        
+    
+    #projects {
+        background-color: #f8f9fa;
+    }
+    
+    .project-card {
+        background-color: #ffffff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    .project-image {
+        height: 250px;
+        overflow: hidden;
+    }
+    
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover .project-image img {
+        transform: scale(1.1);
+    }
+    
+    .project-info {
+        padding: 25px;
+    }
+    
+    .project-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--secondary-color);
+    }
+    
+    .project-info p {
+        color: #6c757d;
+        margin-bottom: 20px;
+    }
+    
+    .btn-primary {
+        background-color: var(--primary-color);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+    }
+    
+    .swiper-container {
+        padding: 30px 0;
+    }
+    
+    .swiper-pagination-bullet {
+        background-color: var(--primary-color);
+    }
+    
+    .swiper-button-next, .swiper-button-prev {
+        color: var(--primary-color);
+    }
+    
+    @media (max-width: 768px) {
+        .project-image {
+            height: 200px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -76,9 +160,6 @@
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="open_source.html">Open Source</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
@@ -89,7 +170,6 @@
         </div>
     </nav>
 
-
     <section id="welcome-section" class="py-5 text-center d-flex align-items-center min-vh-100">
         <div class="container">
             <h1 class="display-2 mb-4" data-aos="fade-up">Hey, I'm <span class="fw-bold">Sidd</span></h1>
@@ -98,55 +178,98 @@
         </div>
     </section>
 
-    <section id="projects" class="py-5">
+    <section id="projects" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">My Projects</h2>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="card project-card h-100">
-                        <img src="Question_Answering.png" class="card-img-top" alt="Natural Language Question Answering System">
-                        <div class="card-body">
-                            <h5 class="card-title">Natural Language Question Answering System</h5>
-                            <a href="https://github.com/MohdSiddiq12/Major-Project" class="btn btn-primary" target="_blank">View Project</a>
+            <h2 class="text-center mb-5 display-4" data-aos="fade-up">My Projects</h2>
+            <div class="swiper-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="Question_Answering.png" alt="Natural Language Question Answering System">
+                            </div>
+                            <div class="project-info">
+                                <h3>Natural Language Question Answering System</h3>
+                                <p>An AI-powered system that understands and answers questions in natural language.</p>
+                                <a href="https://github.com/MohdSiddiq12/Major-Project" class="btn btn-primary" target="_blank">
+                                    <i class="fab fa-github"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="House_Price_Prediction.png" alt="House Price Predictions using ML">
+                            </div>
+                            <div class="project-info">
+                                <h3>House Price Predictions using ML</h3>
+                                <p>A machine learning model to predict house prices in Hyderabad, India.</p>
+                                <a href="https://github.com/MohdSiddiq12/House-Price-Prediction-using-Machine-Learning-Algorithm---The-case-of-Hyderabad-India" class="btn btn-primary" target="_blank">
+                                    <i class="fab fa-github"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="VS_Code.jpeg" alt="VS Code Theme Extension">
+                            </div>
+                            <div class="project-info">
+                                <h3>VS Code Theme Extension</h3>
+                                <p>A custom theme extension for Visual Studio Code to enhance coding experience.</p>
+                                <a href="https://github.com/MohdSiddiq12/NightChill" class="btn btn-primary" target="_blank">
+                                    <i class="fab fa-github"></i> View Project
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card project-card h-100">
-                        <img src="House_Price_Prediction.png" class="card-img-top" alt="House Price Predictions using ML">
-                        <div class="card-body">
-                            <h5 class="card-title">House Price Predictions using ML</h5>
-                            <a href="https://github.com/MohdSiddiq12/House-Price-Prediction-using-Machine-Learning-Algorithm---The-case-of-Hyderabad-India" class="btn btn-primary" target="_blank">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card project-card h-100">
-                        <img src="VS_Code.jpeg" class="card-img-top" alt="VS Code Theme Extension">
-                        <div class="card-body">
-                            <h5 class="card-title">VS Code Theme Extension</h5>
-                            <a href="https://github.com/MohdSiddiq12/NightChill" class="btn btn-primary" target="_blank">View Project</a>
-                        </div>
-                    </div>
-                </div>    
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
             <div class="text-center mt-5">
                 <a href="https://github.com/MohdSiddiq12?tab=repositories" class="btn btn-lg btn-custom" target="_blank" data-aos="fade-up">
                     Show All Projects <i class="fas fa-chevron-right ms-2"></i>
                 </a>
             </div>
         </div>
-
-    <section id="open-source" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Open Source Projects</h2>
-            <!-- ... (open-source project cards content) ... -->
-            <div class="text-center mt-4">
-                <a href="open_source.html" class="btn btn-lg btn-custom">View All Open Source Projects</a>
-            </div>
-        </div>
     </section>
+    
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+    });
+    </script>
 
     <section id="contact" class="py-5">
         <div class="container">
