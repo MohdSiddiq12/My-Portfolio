@@ -16,7 +16,7 @@ To bring this portfolio to life, I utilized the following tools and technologies
 - CSS
 - JavaScript
 - GitHub for version control
-- Infinity free for hosting this website
+- Hosted on GitHub pages 
 
 ## Key Features
 Experience the following key features when exploring this portfolio site:
@@ -25,7 +25,6 @@ Experience the following key features when exploring this portfolio site:
 - **Intuitive Interface:** User-friendly navigation for effortless exploration of content.
 - **Social Media Integration:** Direct links to my social media profiles for additional engagement.
 
-## Hosting Information
-This website is proudly hosted using the Infinityfree service.
+
 
 Feel free to explore the live site and reach out with any questions or inquiries! Thank you for visiting.
