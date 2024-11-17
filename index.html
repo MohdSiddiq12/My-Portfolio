@@ -5,23 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammed Siddiq - AI & ML Engineer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Mohammed Siddiq</h1>
-            <p>AI & Machine Learning Engineer | Former ML Intern at Ignitus</p>
+            <h1 class="name-title">Mohammed Siddiq</h1>
+            <p class="role-title">AI & Machine Learning Engineer | Former ML Intern at Ignitus</p>
             
-            <nav>
+            <nav class="main-nav">
                 <a href="#about">about</a>
                 <a href="#experience">experience</a>
                 <a href="#projects">projects</a>
+                <a href="assets/resume.pdf" download class="download-btn">
+                    <span>resume</span>
+                    <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 3v13m0 0-4-4m4 4 4-4m-10 6v2h12v-2"/>
+                    </svg>
+                </a>
             </nav>
         </header>
 
         <main>
-            <section id="about">
-                <p>Hi there! I'm Mohammed Siddiq. I recently graduated with a B.Tech in Computer Science, 
+            <section id="about" class="about-section">
+                <p class="intro-text">Hi there! I'm Mohammed Siddiq. I recently graduated with a B.Tech in Computer Science, 
                 specializing in AI and Machine Learning, from Siddhartha Institute of Technology and Science.</p>
 
                 <p>I am passionate about AI, ML, NLP, and Deep Learning, and I continuously seek to explore 
@@ -43,18 +52,18 @@
                 </div>
 
                 <div class="contact">
-                    <a href="https://github.com/MohdSiddiq12">github</a> •
-                    <a href="https://linkedin.com/in/mohd-siddiq-3516471b0">linkedin</a> •
-                    <a href="mailto:MohammedSiddiq1235@gmail.com">email</a>
+                    <a href="https://github.com/MohdSiddiq12" class="social-link">github</a> •
+                    <a href="https://linkedin.com/in/mohd-siddiq-3516471b0" class="social-link">linkedin</a> •
+                    <a href="mailto:MohammedSiddiq1235@gmail.com" class="social-link">email</a>
                 </div>
             </section>
 
-            <section id="experience">
+            <section id="experience" class="experience-section">
                 <h2>Experience</h2>
                 <div class="experience-item">
                     <p class="title">Machine Learning Intern, Ignitus</p>
                     <p class="period">February 2024 – May 2024</p>
-                    <ul>
+                    <ul class="experience-list">
                         <li>Implemented ML algorithms in the Learning Management System, boosting user engagement by 30%</li>
                         <li>Overcame remote work challenges, resolving issues and improving team efficiency</li>
                         <li>Took initiative on additional projects, demonstrating strong work ethic</li>
@@ -63,22 +72,19 @@
                 </div>
 
                 <div class="experience-item">
-                    <p class="title"><b>Web Developer</b></p>
-                    <p class="subtitle">Freelance Project for Excel Placements</p><a href="https://www.excelplacements.com/">Link</a>
-                    
+                    <p class="title">Web Developer</p>
+                    <p class="subtitle">Freelance Project for Excel Placements <a href="https://www.excelplacements.com/" class="project-link">Link</a></p>
                     <p class="period">2024</p>
-                    <ul>
+                    <ul class="experience-list">
                         <li>Successfully executed complete domain migration from a deprecated provider to GoDaddy, ensuring business continuity for the client</li>
                         <li>Implemented comprehensive hosting solutions and established new domain infrastructure</li>
                         <li>Developed and deployed a full-featured website (excelplacements.com), managing the entire development lifecycle</li>
                         <li>Provided end-to-end technical consultation for domain transfer, hosting setup, and website development</li>
-                        
                     </ul>
-                   
                 </div>
             </section>
 
-            <section id="projects">
+            <section id="projects" class="projects-section">
                 <h2>Projects</h2>
                 
                 <div class="project">
@@ -87,7 +93,7 @@
                     questions about their content. It utilizes fine-tuned BERT models for accurate answer retrieval.</p>
                     <p class="project-meta">Team Leader | Team Size: 5 | Duration: 60 days</p>
                     <p class="tags">Python • Flask • BERT • NLP</p>
-                    <a href="https://github.com/MohdSiddiq12/Natural-Language-Question-Answering-System">Link</a>
+                    <a href="https://github.com/MohdSiddiq12/Natural-Language-Question-Answering-System" class="project-link">View Project</a>
                 </div>
 
                 <div class="project">
@@ -96,11 +102,9 @@
                     informed housing investment decisions.</p>
                     <p class="project-meta">Team Leader | Team Size: 4 | Duration: 60 days</p>
                     <p class="tags">Python • ML • Gradient Boosting • Data Analysis</p>
-                    <a href="https://github.com/MohdSiddiq12/House-Price-Prediction-using-Machine-Learning-Algorithm---The-case-of-Hyderabad-India">Link</a>
+                    <a href="https://github.com/MohdSiddiq12/House-Price-Prediction-using-Machine-Learning-Algorithm---The-case-of-Hyderabad-India" class="project-link">View Project</a>
                 </div>
             </section>
-
-            
         </main>
     </div>
 </body>
