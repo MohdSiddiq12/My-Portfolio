@@ -9,6 +9,10 @@
   --body-font: 'Inter', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--body-font);
   line-height: 1.7;
