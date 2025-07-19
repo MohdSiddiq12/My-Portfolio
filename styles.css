@@ -7,8 +7,64 @@
   --secondary-text: #666;
   --heading-font: 'Playfair Display', serif;
   --body-font: 'Inter', sans-serif;
+  --card-background: #fff;
+  --achievement-bg: #f8f9fa;
+  --shadow-color: rgba(0,0,0,0.04);
+  --heading-color: #1a1a1a;
+  --title-color: #1a1a1a;
+  --role-color: #666;
+  
+  /* Theme transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Dark theme variables */
+[data-theme="dark"] {
+  --text-color: #e1e1e1;
+  --link-color: #61afef;
+  --border-color: #374151;
+  --background-color: #1a1b1e;
+  --secondary-text: #a0aec0;
+  --card-background: #2d2d2d;
+  --achievement-bg: #2d3748;
+  --shadow-color: rgba(0,0,0,0.2);
+  --heading-color: #ffffff;
+  --title-color: #ffffff;
+  --role-color: #a0aec0;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-background);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  color: var(--text-color);
+}
+
+/* Update existing styles to use new variables */
 html {
   scroll-behavior: smooth;
 }
@@ -17,7 +73,7 @@ body {
   font-family: var(--body-font);
   line-height: 1.7;
   color: var(--text-color);
-  background: var(--background-color);
+  background-color: var(--background-color);
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -36,7 +92,7 @@ h1.name-title {
   font-weight: 700;
   margin: 0;
   letter-spacing: -0.02em;
-  color: #1a1a1a;
+  color: var(--heading-color);
 }
 
 h2 {
@@ -46,7 +102,7 @@ h2 {
   margin-top: 3rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border-color);
-  color: #1a1a1a;
+  color: var(--heading-color);
 }
 
 h3 {
@@ -54,7 +110,7 @@ h3 {
   font-size: 1.35rem;
   font-weight: 700;
   margin: 1.75rem 0 0.75rem;
-  color: #1a1a1a;
+  color: var(--heading-color);
 }
 
 /* Header and Navigation */
@@ -65,7 +121,7 @@ header {
 .role-title {
   font-size: 1.1rem;
   margin: 0.75rem 0 2rem;
-  color: var(--secondary-text);
+  color: var(--role-color);
   font-weight: 500;
 }
 
@@ -134,24 +190,33 @@ section {
   margin-bottom: 4rem;
 }
 
-.intro-text {
+.intro-text,
+.about-section p {
+  color: var(--text-color);
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #2c3e50;
 }
 
-/* Lists */
-ul {
-  padding-left: 1.75rem;
-  margin: 1.25rem 0;
+/* Remove any potential conflicting styles */
+#about p {
+  color: var(--text-color);
 }
 
-li {
-  margin: 0.75rem 0;
-  line-height: 1.6;
+.about-section {
+  color: var(--text-color);
 }
 
-/* Projects */
+/* Ensure consistent paragraph spacing */
+.about-section p {
+  margin-bottom: 1.5rem;
+}
+
+/* Additional specificity to override any conflicting styles */
+[data-theme="dark"] .about-section p,
+[data-theme="dark"] .intro-text {
+  color: var(--text-color);
+}
+
 .project {
   margin-bottom: 3rem;
   padding-bottom: 2rem;
@@ -189,14 +254,14 @@ li {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0;
-  color: #1a1a1a;
+  color: var(--title-color);
 }
 
 .subtitle {
   font-size: 1.1rem;
   font-weight: 500;
   margin: 0.3rem 0;
-  color: #444;
+  color: var(--title-color);
 }
 
 .period {
@@ -208,11 +273,11 @@ li {
 
 /* Achievements */
 .achievements {
-  background: #f8f9fa;
+  background: var(--achievement-bg);
   padding: 1.5rem 2rem;
   border-radius: 8px;
   margin: 2rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .achievements h3 {
@@ -273,8 +338,8 @@ li {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  background: #fff;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  background: var(--card-background);
   border-radius: 8px;
   margin-bottom: 2rem;
   padding: 1.5rem;
@@ -283,6 +348,14 @@ li {
 .project-card.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Add transition to all color changes */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, 
+              color 0.3s ease, 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease;
 }
 
 /* Responsive design */
