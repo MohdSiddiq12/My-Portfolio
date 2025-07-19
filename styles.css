@@ -264,6 +264,23 @@ li {
   color: var(--secondary-text);
 }
 
+/* Project Card Animation */
+.project-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .container {
