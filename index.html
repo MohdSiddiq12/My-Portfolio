@@ -38,7 +38,7 @@
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
-                <a href="mohd-siddiq-cv.pdf" download class="download-btn">
+                <a href="mohd-siddiq-cv.pdf" id="download-resume" class="download-btn" data-filename="mohd-siddiq-cv.pdf" title="Download Resume">
                     <span>Resume</span>
                     <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path d="M12 3v13m0 0-4-4m4 4 4-4m-10 6v2h12v-2"/>
@@ -145,6 +145,35 @@
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
       });
+
+      // New: fetch the PDF and force download as application/pdf to avoid saving as HTML
+      (function () {
+        const resumeLink = document.getElementById('download-resume');
+        if (!resumeLink) return;
+
+        resumeLink.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const filePath = resumeLink.getAttribute('href') || resumeLink.dataset.filename || 'mohd-siddiq-cv.pdf';
+          try {
+            const res = await fetch(filePath, { cache: 'no-store' });
+            if (!res.ok) throw new Error('Network response not ok');
+            const blob = await res.blob();
+            // ensure correct MIME
+            const pdfBlob = new Blob([blob], { type: 'application/pdf' });
+            const url = URL.createObjectURL(pdfBlob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = resumeLink.dataset.filename || 'mohd-siddiq-cv.pdf';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+          } catch (err) {
+            // fallback: navigate to the file (lets browser handle it)
+            window.location.href = filePath;
+          }
+        });
+      })();
     </script>
 </body>
 </html>
