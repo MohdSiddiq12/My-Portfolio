@@ -146,32 +146,58 @@
         localStorage.setItem('theme', newTheme);
       });
 
-      // New: fetch the PDF and force download as application/pdf to avoid saving as HTML
+      // New: robust PDF downloader — try multiple candidate URLs and ensure MIME is PDF
       (function () {
         const resumeLink = document.getElementById('download-resume');
         if (!resumeLink) return;
 
+        const owner = 'MohdSiddiq12';
+        const repo = 'My-Portfolio';
+        const branch = 'master';
+
+        const downloadBlob = (blob, filename) => {
+          const pdfBlob = new Blob([blob], { type: 'application/pdf' });
+          const url = URL.createObjectURL(pdfBlob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
+        };
+
         resumeLink.addEventListener('click', async (e) => {
           e.preventDefault();
-          const filePath = resumeLink.getAttribute('href') || resumeLink.dataset.filename || 'mohd-siddiq-cv.pdf';
-          try {
-            const res = await fetch(filePath, { cache: 'no-store' });
-            if (!res.ok) throw new Error('Network response not ok');
-            const blob = await res.blob();
-            // ensure correct MIME
-            const pdfBlob = new Blob([blob], { type: 'application/pdf' });
-            const url = URL.createObjectURL(pdfBlob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = resumeLink.dataset.filename || 'mohd-siddiq-cv.pdf';
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            URL.revokeObjectURL(url);
-          } catch (err) {
-            // fallback: navigate to the file (lets browser handle it)
-            window.location.href = filePath;
+          const orig = resumeLink.getAttribute('href') || resumeLink.dataset.filename || 'mohd-siddiq-cv.pdf';
+          const filename = resumeLink.dataset.filename || orig.split('/').pop() || 'resume.pdf';
+
+          const candidates = [
+            orig,
+            orig.startsWith('/') ? orig : (`/${orig}`),
+            `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${orig}`
+          ].filter(Boolean);
+
+          for (const url of candidates) {
+            try {
+              const res = await fetch(url, { method: 'GET', cache: 'no-store' });
+              if (!res.ok) continue;
+              const contentType = (res.headers.get('content-type') || '').toLowerCase();
+              if (!contentType.includes('pdf') && !url.toLowerCase().endsWith('.pdf')) {
+                // not a PDF — skip
+                continue;
+              }
+              const blob = await res.blob();
+              downloadBlob(blob, filename);
+              return;
+            } catch (_) {
+              // try next candidate
+              continue;
+            }
           }
+
+          // fallback: open the original href so browser shows server response
+          window.open(orig, '_blank');
         });
       })();
     </script>
