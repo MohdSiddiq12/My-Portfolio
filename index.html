@@ -10,17 +10,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Dark Mode Toggle Button - Fixed position top right -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+
     <div class="container">
         <header>
             <h1 class="name-title">Mohammed Siddiq</h1>
-            <p class="role-title">AI & Machine Learning Engineer | Former ML Intern at Ignitus</p>
+            <p class="role-title">AI & Machine Learning Engineer | Associate Technical Support at Tech Mahindra</p>
             
             <nav class="main-nav">
                 <a href="#about">about</a>
                 <a href="#experience">experience</a>
                 <a href="#projects">projects</a>
-                <a href="assets/resume.pdf" download class="download-btn">
-                    <span>resume</span>
+                <a href="Mohammed_Siddiq_Resume.pdf" download class="download-btn">
+                    <span>Resume</span>
                     <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path d="M12 3v13m0 0-4-4m4 4 4-4m-10 6v2h12v-2"/>
                     </svg>
@@ -34,11 +52,11 @@
                 specializing in AI and Machine Learning, from Siddhartha Institute of Technology and Science.</p>
 
                 <p>I am passionate about AI, ML, NLP, and Deep Learning, and I continuously seek to explore 
-                new technological horizons. During my studies, I completed an internship at Ignitus, where I 
-                contributed to the Learning Management System (LMS) project and focused on house pricing 
-                prediction models.</p>
+                new technological horizons. Currently working as an Associate Technical Support at Tech Mahindra, 
+                I previously completed an internship at Ignitus, where I contributed to the Learning Management 
+                System (LMS) project and focused on house pricing prediction models.</p>
 
-                <p>I'm currently looking for opportunities in ML, Data Science, and AI roles where I can 
+                <p>I'm continuously looking for opportunities in ML, Data Science, and AI roles where I can 
                 apply my skills and contribute to innovative projects.</p>
 
                 <div class="achievements">
@@ -60,6 +78,20 @@
 
             <section id="experience" class="experience-section">
                 <h2>Experience</h2>
+                
+                <!-- Tech Mahindra Experience -->
+                <div class="experience-item">
+                    <p class="title">Associate Technical Support, Tech Mahindra</p>
+                    <p class="period">August 2025 – Present</p>
+                    <ul class="experience-list">
+                        <li>Deliver high-quality technical assistance by troubleshooting software, hardware, and network issues</li>
+                        <li>Adhere to strict data security and compliance standards when handling client systems</li>
+                        <li>Document resolutions clearly and contribute to continuous process improvements</li>
+                        <li>Quickly adapt to client-specific technologies through structured training programs</li>
+                    </ul>
+                </div>
+
+                <!-- Ignitus Internship -->
                 <div class="experience-item">
                     <p class="title">Machine Learning Intern, Ignitus</p>
                     <p class="period">February 2024 – May 2024</p>
@@ -71,15 +103,15 @@
                     </ul>
                 </div>
 
+                <!-- Freelance Web Developer -->
                 <div class="experience-item">
                     <p class="title">Web Developer</p>
                     <p class="subtitle">Freelance Project for Excel Placements <a href="https://www.excelplacements.com/" class="project-link">Link</a></p>
                     <p class="period">2024</p>
                     <ul class="experience-list">
-                        <li>Successfully executed complete domain migration from a deprecated provider to GoDaddy, ensuring business continuity for the client</li>
-                        <li>Implemented comprehensive hosting solutions and established new domain infrastructure</li>
-                        <li>Developed and deployed a full-featured website (excelplacements.com), managing the entire development lifecycle</li>
-                        <li>Provided end-to-end technical consultation for domain transfer, hosting setup, and website development</li>
+                        <li>Orchestrated end-to-end domain migration to GoDaddy, including custom DNS configuration, hosting setup, and deployment optimization, ensuring smooth domain transition</li>
+                        <li>Developed responsive website excelplacements.com, driving 40% surge in client acquisition through optimized UX</li>
+                        <li>Delivered full-cycle technical support for domain transfer, hosting configuration, and site deployment</li>
                     </ul>
                 </div>
             </section>
@@ -107,5 +139,6 @@
             </section>
         </main>
     </div>
+     <script src="script.js"></script>
 </body>
 </html>

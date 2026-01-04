@@ -1,5 +1,8 @@
-/* Base styles with enhanced typography */
+/* ===================================
+   CSS VARIABLES - LIGHT MODE (DEFAULT)
+   =================================== */
 :root {
+  /* Original color scheme */
   --text-color: #2c3e50;
   --link-color: #3498db;
   --border-color: #eee;
@@ -7,8 +10,90 @@
   --secondary-text: #666;
   --heading-font: 'Playfair Display', serif;
   --body-font: 'Inter', sans-serif;
+  
+  /* Additional variables for dark mode compatibility */
+  --heading-color: #1a1a1a;
+  --card-background: #f8f9fa;
+  --shadow-color: rgba(0,0,0,0.04);
 }
 
+/* ===================================
+   CSS VARIABLES - DARK MODE
+   =================================== */
+body.dark-mode {
+  --text-color: #cbd5e1;
+  --link-color: #60a5fa;
+  --border-color: #334155;
+  --background-color: #0f172a;
+  --secondary-text: #94a3b8;
+  --heading-color: #f1f5f9;
+  --card-background: #1e293b;
+  --shadow-color: rgba(0,0,0,0.3);
+}
+
+/* ===================================
+   DARK MODE TOGGLE BUTTON
+   =================================== */
+.theme-toggle {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  
+  /* Button styling */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: var(--background-color);
+  
+  /* Flexbox for icon centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Smooth transitions */
+  transition: all 0.3s ease;
+  
+  /* Cursor and interaction */
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Toggle icons */
+.theme-toggle svg {
+  transition: all 0.3s ease;
+  stroke: var(--text-color);
+}
+
+.moon-icon {
+  display: none;
+}
+
+.sun-icon {
+  display: block;
+}
+
+body.dark-mode .sun-icon {
+  display: none;
+}
+
+body.dark-mode .moon-icon {
+  display: block;
+}
+
+/* ===================================
+   BASE STYLES
+   =================================== */
 body {
   font-family: var(--body-font);
   line-height: 1.7;
@@ -17,6 +102,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -25,14 +111,17 @@ body {
   padding: 3rem 1.5rem;
 }
 
-/* Enhanced Typography */
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
 h1.name-title {
   font-family: var(--heading-font);
   font-size: 2.75rem;
   font-weight: 700;
   margin: 0;
   letter-spacing: -0.02em;
-  color: #1a1a1a;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
 }
 
 h2 {
@@ -42,7 +131,8 @@ h2 {
   margin-top: 3rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border-color);
-  color: #1a1a1a;
+  color: var(--heading-color);
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 h3 {
@@ -50,10 +140,13 @@ h3 {
   font-size: 1.35rem;
   font-weight: 700;
   margin: 1.75rem 0 0.75rem;
-  color: #1a1a1a;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
 }
 
-/* Header and Navigation */
+/* ===================================
+   HEADER AND NAVIGATION
+   =================================== */
 header {
   margin-bottom: 3.5rem;
 }
@@ -63,6 +156,7 @@ header {
   margin: 0.75rem 0 2rem;
   color: var(--secondary-text);
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .main-nav {
@@ -84,7 +178,7 @@ header {
   color: var(--link-color);
 }
 
-/* Enhanced Download Button - Simplified to match other nav items */
+/* Download Button */
 .download-btn {
   position: relative;
   display: inline-flex;
@@ -109,6 +203,7 @@ header {
   opacity: 0;
   transform: translateX(-4px);
   transition: all 0.2s ease;
+  stroke: currentColor;
 }
 
 .download-btn:hover {
@@ -120,12 +215,9 @@ header {
   transform: translateX(0);
 }
 
-/* Remove the underline animation for consistency */
-.download-btn::after {
-  display: none;
-}
-
-/* Sections */
+/* ===================================
+   SECTIONS
+   =================================== */
 section {
   margin-bottom: 4rem;
 }
@@ -133,10 +225,19 @@ section {
 .intro-text {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #2c3e50;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
-/* Lists */
+/* Paragraph styles */
+p {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+/* ===================================
+   LISTS
+   =================================== */
 ul {
   padding-left: 1.75rem;
   margin: 1.25rem 0;
@@ -145,13 +246,22 @@ ul {
 li {
   margin: 0.75rem 0;
   line-height: 1.6;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
-/* Projects */
+.experience-list li {
+  color: var(--text-color);
+}
+
+/* ===================================
+   PROJECTS
+   =================================== */
 .project {
   margin-bottom: 3rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border-color);
+  transition: border-color 0.3s ease;
 }
 
 .project:last-child {
@@ -167,6 +277,7 @@ li {
   font-size: 0.95rem;
   margin: 0.75rem 0;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .tags {
@@ -174,9 +285,12 @@ li {
   font-size: 0.95rem;
   margin: 0.75rem 0;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-/* Experience */
+/* ===================================
+   EXPERIENCE
+   =================================== */
 .experience-item {
   margin-bottom: 2.5rem;
 }
@@ -185,14 +299,16 @@ li {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0;
-  color: #1a1a1a;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
 }
 
 .subtitle {
   font-size: 1.1rem;
   font-weight: 500;
   margin: 0.3rem 0;
-  color: #444;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 .period {
@@ -200,22 +316,28 @@ li {
   font-size: 0.95rem;
   margin: 0.4rem 0 0.75rem;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-/* Achievements */
+/* ===================================
+   ACHIEVEMENTS
+   =================================== */
 .achievements {
-  background: #f8f9fa;
+  background: var(--card-background);
   padding: 1.5rem 2rem;
   border-radius: 8px;
   margin: 2rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .achievements h3 {
   margin-top: 0;
 }
 
-/* Contact section */
+/* ===================================
+   CONTACT SECTION
+   =================================== */
 .contact {
   margin: 2.5rem 0;
   font-size: 1.1rem;
@@ -246,7 +368,9 @@ li {
   text-decoration: underline;
 }
 
-/* Skills Grid (if needed) */
+/* ===================================
+   SKILLS GRID (OPTIONAL)
+   =================================== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -262,36 +386,47 @@ li {
 .skill-category p {
   margin: 0;
   color: var(--secondary-text);
+  transition: color 0.3s ease;
 }
 
-/* Responsive design */
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
 @media (max-width: 768px) {
   .container {
-      padding: 1.5rem;
+    padding: 1.5rem;
   }
 
   h1.name-title {
-      font-size: 2.25rem;
+    font-size: 2.25rem;
   }
 
   .role-title {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .main-nav {
-      flex-wrap: wrap;
-      gap: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .intro-text {
-      font-size: 1.1rem;
+    font-size: 1.1rem;
   }
 
   .achievements {
-      padding: 1.25rem 1.5rem;
+    padding: 1.25rem 1.5rem;
   }
   
   .download-btn {
-      font-size: 1.05rem;
+    font-size: 1.05rem;
+  }
+  
+  /* Adjust theme toggle for mobile */
+  .theme-toggle {
+    top: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
   }
 }
