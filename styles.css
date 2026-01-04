@@ -35,10 +35,11 @@ body.dark-mode {
    DARK MODE TOGGLE BUTTON
    =================================== */
 .theme-toggle {
+  /* Fixed positioning - stays on screen */
   position: fixed;
   top: 2rem;
   right: 2rem;
-  z-index: 1000;
+  z-index: 9999;
   
   /* Button styling */
   width: 48px;
@@ -51,6 +52,10 @@ body.dark-mode {
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  /* Remove default button styles */
+  padding: 0;
+  outline: none;
   
   /* Smooth transitions */
   transition: all 0.3s ease;
