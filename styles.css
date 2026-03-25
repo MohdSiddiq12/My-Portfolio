@@ -376,11 +376,19 @@ li {
 /* ===================================
    SKILLS GRID (OPTIONAL)
    =================================== */
+.skills-section {
+  margin-bottom: 4rem;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
+}
+
+.skill-category {
+  margin-bottom: 1.75rem;
 }
 
 .skill-category h3 {
